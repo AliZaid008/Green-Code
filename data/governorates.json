@@ -1,0 +1,219 @@
+[
+  {
+    "id": "baghdad",
+    "ar": "بغداد",
+    "center": [
+      33.3152,
+      44.3661
+    ],
+    "summary": "هواء: حرق نفايات (معسكر الرشيد، النهروان، النباعي)، محطات كهرباء، معامل طابوق وإسفلت. نفايات: مكب الدورة مثقل بنفايات غير مفرزة. إشعاعي: ساحات خردة بإشعاع مرتفع (دراسة 2010).",
+    "en": "Baghdad",
+    "summary_en": "Air: waste burning (Rasheed Camp, Nahrawan, Nabaai), power plants, brick kilns and asphalt plants. Waste: Al-Doura landfill overwhelmed by unsorted waste. Radiation: scrap yards with elevated radiation (2010 study).",
+    "iso": "IQ-BG",
+    "core_km": 30
+  },
+  {
+    "id": "basra",
+    "ar": "البصرة",
+    "center": [
+      30.5085,
+      47.7804
+    ],
+    "summary": "مياه: ملوحة شط العرب ومجاري مفتوحة (أزمة 2018 وأكثر من 120 ألف مصاب). هواء: حرق الغاز في حقول الرميلة. نفايات: مكب المعقل (حرق مفتوح). تربة: ديوكسين وخردة بإشعاع مرتفع (دراسة 2010).",
+    "en": "Basra",
+    "summary_en": "Water: Shatt al-Arab salinity and open sewage (2018 crisis, 120,000+ sickened). Air: gas flaring at Rumaila. Waste: Al-Maqal landfill (open burning). Soil: dioxins and scrap yards with elevated radiation (2010 study).",
+    "iso": "IQ-BA"
+  },
+  {
+    "id": "nineveh",
+    "ar": "نينوى",
+    "center": [
+      36.34,
+      43.13
+    ],
+    "summary": "هواء: حرق غاز في حقل القيارة، وسكان أبلغوا عن دخان أسود (ديسمبر 2025).",
+    "en": "Nineveh",
+    "summary_en": "Air: gas flaring at Qayyarah field; residents reported black smoke (Dec 2025).",
+    "iso": "IQ-NI"
+  },
+  {
+    "id": "erbil",
+    "ar": "أربيل",
+    "center": [
+      36.19,
+      44.01
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Erbil",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-AR"
+  },
+  {
+    "id": "sulaymaniyah",
+    "ar": "السليمانية",
+    "center": [
+      35.56,
+      45.43
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Sulaymaniyah",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-SU"
+  },
+  {
+    "id": "duhok",
+    "ar": "دهوك",
+    "center": [
+      36.87,
+      42.99
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Duhok",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-DA"
+  },
+  {
+    "id": "kirkuk",
+    "ar": "كركوك",
+    "center": [
+      35.47,
+      44.39
+    ],
+    "summary": "مياه: تلوث نفطي بمياه الري حول كركوك. هواء: مشاعل غاز حقل بابا ترفع الجسيمات PM2.5 في ناحية تسين.",
+    "en": "Kirkuk",
+    "summary_en": "Water: oil contaminating irrigation water around Kirkuk. Air: Baba field flares raise PM2.5 in Tisin sub-district.",
+    "iso": "IQ-KI"
+  },
+  {
+    "id": "diyala",
+    "ar": "ديالى",
+    "center": [
+      33.75,
+      44.64
+    ],
+    "summary": "مياه: نفوق جماعي للأسماك بسبب التلوث. وردت ضمن المدن عالية التلوث في تصنيفات جودة الهواء.",
+    "en": "Diyala",
+    "summary_en": "Water: mass fish deaths from pollution. Listed among highly polluted cities in air-quality rankings.",
+    "iso": "IQ-DI"
+  },
+  {
+    "id": "anbar",
+    "ar": "الأنبار",
+    "center": [
+      33.42,
+      43.3
+    ],
+    "summary": "هواء: وردت ضمن المدن عالية التلوث في تصنيفات جودة الهواء. تحتاج بحثاً أعمق.",
+    "en": "Anbar",
+    "summary_en": "Air: listed among highly polluted cities in air-quality rankings. Needs deeper research.",
+    "iso": "IQ-AN"
+  },
+  {
+    "id": "saladin",
+    "ar": "صلاح الدين",
+    "center": [
+      34.6,
+      43.68
+    ],
+    "summary": "هواء: انبعاثات حرق الوقود الثقيل ومشاعل الغاز ومعامل الإسفلت في قضاء طوز خورماتو (تصريح رسمي، يونيو 2026).",
+    "en": "Saladin",
+    "summary_en": "Air: heavy fuel burning, gas flares and asphalt plants in Tuz Khurmatu (official statement, Jun 2026).",
+    "iso": "IQ-SD"
+  },
+  {
+    "id": "babil",
+    "ar": "بابل",
+    "center": [
+      32.48,
+      44.42
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Babil",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-BB"
+  },
+  {
+    "id": "karbala",
+    "ar": "كربلاء",
+    "center": [
+      32.616,
+      44.024
+    ],
+    "summary": "هواء: وردت ضمن المدن عالية التلوث في تصنيف IQAir. لم أجد بيانات تفصيلية بعد، تحتاج بحثاً ميدانياً.",
+    "en": "Karbala",
+    "summary_en": "Air: listed among highly polluted cities in the IQAir ranking. No detailed data found yet; needs field research.",
+    "iso": "IQ-KA"
+  },
+  {
+    "id": "najaf",
+    "ar": "النجف",
+    "center": [
+      32.03,
+      44.34
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Najaf",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-NA"
+  },
+  {
+    "id": "qadisiyyah",
+    "ar": "القادسية",
+    "center": [
+      31.99,
+      44.93
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Al-Qadisiyyah",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-QA"
+  },
+  {
+    "id": "muthanna",
+    "ar": "المثنى",
+    "center": [
+      31.31,
+      45.28
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Muthanna",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-MU"
+  },
+  {
+    "id": "dhiqar",
+    "ar": "ذي قار",
+    "center": [
+      31.05,
+      46.26
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Dhi Qar",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-DQ"
+  },
+  {
+    "id": "maysan",
+    "ar": "ميسان",
+    "center": [
+      31.84,
+      47.14
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Maysan",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-MA"
+  },
+  {
+    "id": "wasit",
+    "ar": "واسط",
+    "center": [
+      32.51,
+      45.82
+    ],
+    "summary": "لا توجد بيانات موثقة بعد.",
+    "en": "Wasit",
+    "summary_en": "No documented data yet.",
+    "iso": "IQ-WA"
+  }
+]
