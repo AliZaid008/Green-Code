@@ -142,5 +142,12 @@ module.exports = {
     const r = await fetch(`${URL_}/storage/v1/object/${BUCKET}/${name}`, { method: 'POST', headers: H({ 'Content-Type': mime, 'x-upsert': 'true' }), body: buf });
     if (!r.ok) throw new Error('Storage upload failed: ' + r.status + ' ' + (await r.text()).slice(0, 200));
     return `${URL_}/storage/v1/object/public/${BUCKET}/${name}`;
+  },
+  // حذف صور بلاغ مرفوض من Supabase Storage نهائياً
+  async removePhotos(urls) {
+    const marker = `/object/public/${BUCKET}/`, names = (urls || []).map(u => String(u).split(marker)[1]).filter(Boolean).map(decodeURIComponent);
+    if (!names.length) return;
+    const r = await fetch(`${URL_}/storage/v1/object/${BUCKET}`, { method: 'DELETE', headers: H({ 'Content-Type': 'application/json' }), body: JSON.stringify({ prefixes: names }) });
+    if (!r.ok) throw new Error('Storage delete failed: ' + r.status);
   }
 };

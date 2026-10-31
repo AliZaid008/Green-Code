@@ -183,6 +183,7 @@ async function publish(r, o = {}) {
 async function reject(r, { penalize = true, note = '' } = {}) {
   await db.deletePending(r.id);
   if (!db.IS_REMOTE) r.photos.forEach(u => /^\/uploads\//.test(u) && fs.unlink(path.join(UPLOADS, path.basename(u)), () => {}));
+  else if (db.removePhotos) await db.removePhotos(r.photos).catch(e => console.error('تعذر حذف صور البلاغ المرفوض:', e.message));
   if (r.user_id) { await db.setReportStatus(r.id, 'rejected', { note: s(note, 300) }); if (penalize) await db.bumpUser(r.user_id, { rejected: 1 }); }
 }
 app.post('/api/report', ipLimit, ...needUser, reportGate, upload.array('photos', 3), wrap(async (req, res) => {
