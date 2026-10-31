@@ -1,0 +1,16 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon.svg"><meta name="theme-color" content="#06201d">
+<title>Green Code</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=18"></head>
+<body class="night" data-title="title_profile" data-active="/">
+<div class="top"><b data-i18n="brand"></b><div class="tools"><button class="lang" id="langbtn"></button><a class="back" href="/" data-i18n="home"></a></div></div>
+<main class="wrap" id="app" hidden>
+<div class="gcard"><div class="rankbox"><div id="seal"></div><div><div class="muted" data-i18n="rank"></div><div class="big" id="rname"></div><div class="muted" id="uname"></div></div></div>
+<div class="kpis" id="kpis"></div><div id="next" style="margin-top:14px"></div></div>
+<div class="gcard"><h2 data-i18n="my_reports"></h2><div id="reps"></div></div>
+<div class="gcard"><h2 data-i18n="all_ranks"></h2><div class="ladder" id="ladder"></div></div>
+<div class="gcard"><h2 data-i18n="settings"></h2><form id="sf"><label data-i18n="r_name"></label><input name="name" maxlength="80"><label data-i18n="r_phone"></label><input name="phone" type="tel">
+<label style="display:flex;gap:8px;align-items:center"><input type="checkbox" name="public"><span data-i18n="r_public"></span></label><button class="cta full" data-i18n="save"></button><div class="msg" id="smsg"></div></form></div>
+<div class="gcard"><h2 data-i18n="change_pw"></h2><form id="pf"><label data-i18n="cur_pass"></label><input name="current" type="password" autocomplete="current-password"><label data-i18n="new_pass"></label><input name="next" type="password" autocomplete="new-password" minlength="8"><button class="cta full" data-i18n="save"></button><div class="msg" id="pmsg"></div></form></div>
+<div class="gcard"><div style="display:flex;gap:10px;flex-wrap:wrap"><button class="cta ghost" id="out" data-i18n="logout"></button><button class="cta danger" id="del" data-i18n="del_acc"></button></div></div></main>
+<script src="/config.js?v=18"></script><script src="/js/common.js?v=18"></script><script src="/js/profile.js?v=18"></script></body></html>

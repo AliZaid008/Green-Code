@@ -1,0 +1,69 @@
+<!doctype html><html lang="ar" dir="rtl"><head><link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon.svg"><meta name="theme-color" content="#0f5f52"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>لوحة الإدارة</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=21">
+<style>
+.wrap{max-width:1150px;margin:0 auto;padding:22px}.box{background:#fff;border-radius:14px;padding:20px;margin-bottom:20px;border-top:10px solid var(--leaf)}
+.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center}.row>*{flex:0 0 auto}
+table{width:100%;border-collapse:collapse}td,th{padding:8px;border-bottom:1px solid var(--line);text-align:start;vertical-align:top}
+.sm{font:inherit;font-weight:700;padding:5px 12px;border-radius:8px;border:0;cursor:pointer;color:#fff;background:var(--leaf)}.sm.del{background:var(--coral)}.sm.gr{background:#607d8b}
+.pend{border:2px solid var(--sun);border-radius:10px;padding:12px;margin-bottom:12px}.pend img{height:90px;border-radius:6px;margin:4px}
+dialog{border:0;border-radius:14px;padding:22px;max-width:640px;width:94%}dialog::backdrop{background:rgba(0,0,0,.5)}
+dialog label{display:block;margin:10px 0 3px;font-weight:800}dialog input,dialog select,dialog textarea,.wrap>.box input{width:100%;font:inherit;padding:8px;border:2px solid var(--line);border-radius:8px}
+dialog .two{display:grid;grid-template-columns:1fr 1fr;gap:10px}#lerr,#ferr{color:var(--coral);font-weight:800}
+
+.atabs{border-radius:0;display:flex;gap:6px;flex-wrap:wrap;margin-bottom:16px;position:sticky;top:0;z-index:5;background:var(--mist);padding:8px 0}
+.atabs button{color:var(--ink);font:inherit;font-weight:800;padding:8px 16px;border-radius:99px;border:2px solid var(--line);background:#fff;cursor:pointer}.atabs button.on{background:var(--leaf);color:#fff!important;border-color:var(--leaf)}.atabs b{background:var(--coral);color:#fff;border-radius:99px;padding:0 7px;font-size:.78rem;margin-inline-start:4px}
+.akpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}.akpi{background:#fff;border-radius:14px;padding:14px;border-top:6px solid var(--leaf)}.akpi b{display:block;font-size:1.9rem;line-height:1.1}.akpi small{color:#4b6b5d}
+.bars div.r{display:grid;grid-template-columns:110px 1fr 36px;gap:8px;align-items:center;margin:5px 0;font-size:.9rem}.bars i{display:block;height:12px;border-radius:6px;background:var(--leaf)}
+.spark{display:flex;align-items:flex-end;gap:3px;height:90px}.spark i{flex:1;background:var(--leaf);border-radius:3px 3px 0 0;min-height:2px}
+.two2{display:grid;grid-template-columns:1fr 1fr;gap:16px}@media(max-width:760px){.two2{grid-template-columns:1fr}.bars div.r{grid-template-columns:80px 1fr 30px}}
+.bulk{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-bottom:12px}.pend .ck{float:inline-end;transform:scale(1.4)}
+.pill{display:inline-block;padding:2px 10px;border-radius:99px;background:#e6f2ec;font-weight:700;font-size:.82rem}.ok{color:#1b7a4b}.no{color:#b3261e}
+@media print{.atabs,.top,.noprint,#login{display:none!important}.panel{display:block!important}.box{break-inside:avoid;box-shadow:none;border:1px solid #999}body{background:#fff}}
+</style></head>
+<body><div class="top"><b>لوحة الإدارة</b><a class="back" href="/">→ الموقع</a></div>
+<div class="wrap">
+<div class="box" id="login"><h2>دخول</h2><p>ادخل المفتاح السري (ADMIN_KEY من ملف .env)</p>
+<input id="key" type="password" autocomplete="off"><div style="margin-top:10px"><button class="btn" id="go">دخول</button> <span id="lerr"></span></div></div>
+
+<div id="app" hidden>
+<div class="atabs noprint" id="tabs"><button data-t="ov" class="on">📊 نظرة عامة</button><button data-t="pe">📥 بلاغات <b id="pbadge">0</b></button><button data-t="pt">📍 النقاط</button><button data-t="us">👥 الحسابات</button><button data-t="au">🧾 سجل التدقيق</button><button data-t="tl">🛠 أدوات النظام</button></div>
+<section class="panel" data-p="ov">
+<div class="row noprint" style="margin-bottom:12px"><button class="btn" id="print" type="button" style="margin:0">🖨 طباعة تقرير ملخّص</button><button class="sm gr" id="refresh" type="button">تحديث</button><small id="gen"></small></div>
+<div class="akpis" id="kpis"></div>
+<div class="two2"><div class="box"><h2>البلاغات آخر 30 يوماً</h2><div class="spark" id="spark"></div><small id="sparkl"></small></div>
+<div class="box"><h2>جودة المراجعة</h2><div id="review"></div></div></div>
+<div class="two2"><div class="box"><h2>حسب نوع التلوث</h2><div class="bars" id="btype"></div></div><div class="box"><h2>أعلى المحافظات</h2><div class="bars" id="bgov"></div></div></div>
+<div class="box"><h2>أنشط المساهمين</h2><div id="topr"></div></div>
+</section>
+<section class="panel" data-p="pe" hidden><div class="box"><h2>بلاغات بانتظار المراجعة (<span id="pc">0</span>)</h2><div class="bulk noprint"><label><input type="checkbox" id="selall"> تحديد الكل</label><button class="sm" id="b_ok" type="button">اعتماد المحدد</button><button class="sm del" id="b_no" type="button">رفض المحدد</button><button class="sm gr" id="b_dis" type="button">حذف بدون خصم</button><span id="bmsg"></span></div><div id="pending"></div></div>
+</section>
+<section class="panel" data-p="pt" hidden><div class="box"><div class="row"><h2 style="margin:0">النقاط المنشورة (<span id="nc">0</span>)</h2><input id="s" placeholder="بحث..." style="max-width:220px"><select id="sg" style="max-width:170px;font:inherit;padding:8px;border:2px solid var(--line);border-radius:8px"></select><select id="ss" style="max-width:150px;font:inherit;padding:8px;border:2px solid var(--line);border-radius:8px"><option value="">كل الحالات</option><option value="active">قائمة</option><option value="removed">أُزيلت</option></select><button class="btn" id="add" style="margin:0">+ إضافة نقطة</button></div>
+<div style="overflow-x:auto;margin-top:12px"><table><thead><tr><th>العنوان</th><th>المحافظة</th><th>النوع</th><th>الحالة</th><th>المصدر</th><th></th></tr></thead><tbody id="rows"></tbody></table></div></div></section>
+<section class="panel" data-p="us" hidden><div class="box"><h2>الحسابات والرتب</h2><div id="users" style="overflow:auto"></div></div>
+</section>
+<section class="panel" data-p="au" hidden><div class="box"><div class="row"><h2 style="margin:0">سجل التدقيق — كل إجراء إداري</h2><a class="btn" style="margin:0" href="/api/admin/export/audit" id="x_au">⬇ CSV</a></div><div style="overflow:auto;margin-top:12px" id="audit"></div></div></section>
+<section class="panel" data-p="tl" hidden>
+<div class="box"><h2>تصدير البيانات (Excel / CSV)</h2><p>ملفات بترميز UTF-8 تفتح مباشرة في Excel بالعربية. كل تصدير يُسجَّل في سجل التدقيق.</p><div class="row"><button class="btn" data-x="points" type="button" style="margin:0">⬇ النقاط المنشورة</button><button class="btn" data-x="reports" type="button" style="margin:0">⬇ بلاغات المواطنين</button><button class="btn" data-x="audit" type="button" style="margin:0">⬇ سجل التدقيق</button></div></div>
+<div class="box"><h2>حالة النظام</h2><div id="sys"></div></div>
+<div class="box"><div class="row"><h2 style="margin:0">اختبار الإشعارات</h2><button class="btn" id="testn" type="button" style="margin:0">إرسال بلاغ تجريبي</button><span id="testr"></span></div></div>
+</section>
+</div>
+
+<dialog id="dlg"><form id="pf">
+<h2 id="dt">نقطة تلوث</h2>
+<label>العنوان (عربي)</label><input id="f_title" required><label>Title (English)</label><input id="f_title_en">
+<label>الوصف (عربي)</label><textarea id="f_desc" rows="3" required></textarea><label>Description (English)</label><textarea id="f_desc_en" rows="3"></textarea>
+<div class="two"><div><label>النوع</label><select id="f_type"></select></div><div><label>المحافظة</label><select id="f_gov"></select></div></div>
+<div class="two"><div><label>خط العرض (lat)</label><input id="f_lat" type="number" step="any" required></div><div><label>خط الطول (lng)</label><input id="f_lng" type="number" step="any" required></div></div>
+<label>رابط المصدر (يبدأ بـ https)</label><input id="f_source" required>
+<div class="two"><div><label>الحل المقترح (عربي)</label><input id="f_solution"></div><div><label>Solution (English)</label><input id="f_solution_en"></div></div>
+<div class="two"><div><label>النوع</label><select id="f_kind"><option value="documented">موثّق إعلامياً</option><option value="reported">بلاغ مواطن</option><option value="potential">مصدر محتمل</option></select></div><div><label><input type="checkbox" id="f_approx" style="width:auto"> الموقع تقريبي</label></div></div>
+<div class="two"><div><label>الحالة</label><select id="f_status"><option value="active">قائمة (ملوِّثة)</option><option value="removed">أُزيلت / أُوقفت</option></select></div><div><label>تاريخ الإزالة (YYYY-MM-DD)</label><input id="f_removed_at" placeholder="2026-08-12"></div></div>
+<div class="two"><div><label>ملاحظة الإزالة (عربي)</label><input id="f_removed_note"></div><div><label>Removal note (English)</label><input id="f_removed_note_en"></div></div>
+<p style="margin:4px 0;font-size:.9rem;color:#4b6b5d">عند اختيار «أُزيلت» لازم يكون رابط المصدر يثبت الإزالة. تظهر في قسم الأخبار تلقائياً.</p>
+<div id="ferr"></div><div class="row" style="margin-top:14px"><button class="btn" type="submit" style="margin:0">حفظ</button><button class="sm gr" type="button" id="cancel">إلغاء</button></div>
+</form></dialog>
+</div>
+<script src="/config.js?v=21"></script><script src="/js/common.js?v=21"></script><script src="/js/admin.js?v=21"></script></body></html>

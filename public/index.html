@@ -1,0 +1,46 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="manifest" href="/manifest.webmanifest"><link rel="icon" href="/icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="/icon.svg"><meta name="theme-color" content="#06201d">
+<title>Green Code</title><meta name="description" content="Iraq pollution map: documented sites, citizen reports, 3D view.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/style.css?v=18"><link rel="stylesheet" href="/css/home.css?v=18"></head>
+<body class="night home3" data-title="title_home">
+<div class="top"><b data-i18n="brand"></b>
+  <nav class="hnav" aria-label="main"><a href="/map.html" data-i18n="nav_map"></a><a href="/report.html" data-i18n="nav_report"></a><a href="/leaderboard.html" class="auth-only" data-i18n="nav_board"></a><a href="/stats.html" data-i18n="stats_t"></a></nav>
+  <div class="tools"><button class="lang" id="langbtn"></button></div></div>
+
+<header class="hero3">
+  <div class="hero3-txt">
+    <h1 data-i18n="h_title"></h1>
+    <p data-i18n="h_sub"></p>
+    <div class="hero3-cta"><a class="cta" href="/report.html" data-i18n="report_t"></a><a class="cta ghost" href="/map.html" data-i18n="view_t"></a></div>
+    <dl class="nums"><div><dd id="n1">0</dd><dt data-i18n="stat1"></dt></div><div><dd id="n2">0</dd><dt data-i18n="stat2"></dt></div><div><dd id="n3">0</dd><dt data-i18n="h_gone"></dt></div></dl>
+  </div>
+  <div class="hero3-3d"><canvas id="scene" aria-label="3D map of Iraq"></canvas><div class="hint" id="hint" data-i18n="h_drag"></div><div class="gtip" id="gtip" hidden></div></div>
+</header>
+
+<a class="ticker" id="ticker" href="/map.html" aria-label="news" hidden><span class="tk-l" data-i18n="h_latest"></span><div class="tk-w"><div class="tk-t" id="tk"></div></div></a>
+
+<main class="h3">
+  <section class="split types">
+    <div class="cubecol"><div class="cubebox" id="cubebox"><div class="cube" id="cube"></div></div><p class="muted cubehint" data-i18n="h_cube_hint"></p></div>
+    <div><h2 data-i18n="h_types_t"></h2><p class="lead" data-i18n="h_types_p"></p><ul class="tlist" id="tlist"></ul></div>
+  </section>
+
+  <section class="how"><h2 data-i18n="h_how_t"></h2>
+    <ol class="steps3">
+      <li class="tilt"><span class="sn">1</span><h3 data-i18n="h_s1t"></h3><p data-i18n="h_s1p"></p></li>
+      <li class="tilt"><span class="sn">2</span><h3 data-i18n="h_s2t"></h3><p data-i18n="h_s2p"></p></li>
+      <li class="tilt"><span class="sn">3</span><h3 data-i18n="h_s3t"></h3><p data-i18n="h_s3p"></p></li>
+    </ol></section>
+
+  <section class="split insights"><div><h2 data-i18n="h_where_t"></h2><p class="lead" data-i18n="h_where_p"></p><div class="tbar big" id="tbar"></div><div class="tleg" id="tleg"></div></div>
+    <div id="topg" class="topg"></div></section>
+
+  <section class="ranks auth-only"><div><h2 data-i18n="h_rank_t"></h2><p class="lead" data-i18n="h_rank_p"></p><a class="cta" href="/login.html?mode=up" data-i18n="h_join"></a></div>
+    <div><div class="ladder" id="ladder"></div><div id="lb3" class="lb3"></div></div></section>
+</main>
+
+<footer class="foot"><div><b data-i18n="brand"></b><p class="muted" data-i18n="h_foot_p"></p></div>
+  <nav><a href="/map.html" data-i18n="nav_map"></a><a href="/report.html" data-i18n="nav_report"></a><a href="/stats.html" data-i18n="stats_t"></a><a href="/leaderboard.html" class="auth-only" data-i18n="nav_board"></a></nav>
+  <p class="muted fine" data-i18n="h_foot_hack"></p></footer>
+<script src="/config.js?v=18"></script><script src="/js/common.js?v=18"></script><script src="/js/iraq3d.js?v=18"></script><script src="/js/home.js?v=18"></script></body></html>
